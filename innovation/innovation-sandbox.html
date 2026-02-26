@@ -241,6 +241,7 @@
 
 
 
+
     /* ─── MOBILE DRAWER ─── */
     .mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.48);z-index:200;opacity:0;pointer-events:none;transition:opacity 0.28s ease;}
     .mob-overlay.open{opacity:1;pointer-events:all;}
@@ -249,7 +250,7 @@
     .mob-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);flex-shrink:0;}
     .mob-close{background:none;border:none;cursor:pointer;padding:5px;color:var(--black);line-height:1;border-radius:var(--radius);transition:background var(--tr);}
     .mob-close:hover{background:var(--light-blue);}
-    .mob-nav{flex:1;}
+    .mob-nav{flex:1;display:block;height:auto;padding:0;position:static;border-bottom:none;background:transparent;z-index:auto;}
     .mob-icon{width:15px;height:15px;flex-shrink:0;opacity:0.55;transition:opacity var(--tr);}
     .mob-item-inner{display:flex;align-items:center;gap:10px;}
     .mob-services-btn{width:100%;display:flex;justify-content:space-between;align-items:center;padding:9px 16px;font-size:13px;line-height:1.2;font-weight:500;color:var(--black);background:none;border:none;border-bottom:1px solid var(--border);cursor:pointer;font-family:var(--font);text-align:left;transition:color var(--tr);}

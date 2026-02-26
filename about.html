@@ -124,29 +124,31 @@
     .team-card:nth-child(1)::before { background: linear-gradient(90deg, #247B96, #2BBFA8); }
     .team-card:nth-child(2)::before { background: linear-gradient(90deg, #444561, #8E8FC8); }
     .team-card:nth-child(3)::before { background: linear-gradient(90deg, #3D978A, #6DD4A0); }
-    .team-card:nth-child(4)::before { background: linear-gradient(90deg, #E8782A, #F5B731); }
-    .team-card:nth-child(5)::before { background: linear-gradient(90deg, #247B96, #3FAFC8); }
-    .team-card:nth-child(6)::before { background: linear-gradient(90deg, #3D978A, #2BBFA8); }
+    .team-card:nth-child(4)::before { background: linear-gradient(90deg, #247B96, #3FAFC8); }
+    .team-card:nth-child(5)::before { background: linear-gradient(90deg, #3D978A, #2BBFA8); }
+    .team-card:nth-child(6)::before { background: linear-gradient(90deg, #E8782A, #F5B731); }
     .team-card:nth-child(7)::before { background: linear-gradient(90deg, #CB632F, #E8782A); }
-    .team-card:nth-child(8)::before { background: linear-gradient(90deg, #444561, #6B6C9A); }
     .team-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
     .team-avatar {
-      width: 72px; height: 72px; border-radius: 50%;
+      width: 80px; height: 80px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 18px; font-size: 22px; font-weight: 300;
       color: var(--white); letter-spacing: -0.02em;
+      overflow: hidden; flex-shrink: 0;
     }
+    .team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .team-card:nth-child(1) .team-avatar { background: linear-gradient(135deg, #247B96, #2BBFA8); }
     .team-card:nth-child(2) .team-avatar { background: linear-gradient(135deg, #444561, #8E8FC8); }
     .team-card:nth-child(3) .team-avatar { background: linear-gradient(135deg, #3D978A, #6DD4A0); }
-    .team-card:nth-child(4) .team-avatar { background: linear-gradient(135deg, #E8782A, #F5B731); }
-    .team-card:nth-child(5) .team-avatar { background: linear-gradient(135deg, #247B96, #3FAFC8); }
-    .team-card:nth-child(6) .team-avatar { background: linear-gradient(135deg, #3D978A, #2BBFA8); }
+    .team-card:nth-child(4) .team-avatar { background: linear-gradient(135deg, #247B96, #3FAFC8); }
+    .team-card:nth-child(5) .team-avatar { background: linear-gradient(135deg, #3D978A, #2BBFA8); }
+    .team-card:nth-child(6) .team-avatar { background: linear-gradient(135deg, #E8782A, #F5B731); }
     .team-card:nth-child(7) .team-avatar { background: linear-gradient(135deg, #CB632F, #E8782A); }
-    .team-card:nth-child(8) .team-avatar { background: linear-gradient(135deg, #444561, #6B6C9A); }
     .team-name { font-size: 16px; font-weight: 600; color: var(--black); margin-bottom: 4px; letter-spacing: -0.01em; }
-    .team-title { font-size: 12px; color: var(--gray-mid); line-height: 1.45; margin-bottom: 12px; }
-    .team-bio { font-size: 12px; color: var(--gray-light); line-height: 1.6; }
+    .team-title { font-size: 12px; color: var(--gray-mid); line-height: 1.45; margin-bottom: 14px; }
+    .team-linkedin { display: flex; justify-content: center; }
+    .team-linkedin a { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--light-blue); color: var(--blue); transition: background var(--tr), color var(--tr); }
+    .team-linkedin a:hover { background: var(--blue); color: var(--white); }
 
     /* ── CTA Band ── */
     .cta-band {
@@ -438,59 +440,80 @@
     <div class="team-grid">
 
       <div class="team-card fade-up">
-        <div class="team-avatar">JH</div>
+        <div class="team-avatar"><img src="images/jake.png" alt="Jake Hamann"></div>
         <div class="team-name">Jake Hamann</div>
         <div class="team-title">Founder &amp; CEO</div>
-        <div class="team-bio">Former Caterpillar and Boeing executive. Founded Startup Peoria and brings enterprise innovation experience across advanced manufacturing and aerospace.</div>
+        <div class="team-linkedin">
+          <a href="#" target="_blank" rel="noopener" aria-label="Jake Hamann on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="team-card fade-up">
-        <div class="team-avatar">HS</div>
+        <div class="team-avatar"><img src="images/harsh.jpg" alt="Harsh Shah"></div>
         <div class="team-name">Harsh Shah</div>
         <div class="team-title">Co-Founder &amp; COO</div>
-        <div class="team-bio">Expert in AR/VR platforms and SaaS product development. Drives operational excellence and technology strategy across the ENTEVATE portfolio.</div>
+        <div class="team-linkedin">
+          <a href="#" target="_blank" rel="noopener" aria-label="Harsh Shah on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="team-card fade-up">
-        <div class="team-avatar">MB</div>
+        <div class="team-avatar"><img src="images/binko.jpg" alt="Michael Binko"></div>
         <div class="team-name">Michael Binko</div>
         <div class="team-title">Managing Director, Innovation</div>
-        <div class="team-bio">Led innovation programs at Startup Maryland and LaunchFuel. Brings deep expertise in ecosystem building, venture development, and innovation systems.</div>
+        <div class="team-linkedin">
+          <a href="#" target="_blank" rel="noopener" aria-label="Michael Binko on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="team-card fade-up">
-        <div class="team-avatar">JS</div>
-        <div class="team-name">Jack Sylvester</div>
-        <div class="team-title">Managing Director, Digital &amp; Content</div>
-        <div class="team-bio">Veteran content strategist with experience at Marriott, Tesla, and McDonald's. Leads digital transformation and content readiness engagements.</div>
-      </div>
-
-      <div class="team-card fade-up">
-        <div class="team-avatar">GL</div>
+        <div class="team-avatar"><img src="images/grant.jpg" alt="Grant Lonie"></div>
         <div class="team-name">Grant Lonie</div>
         <div class="team-title">Director of Engineering</div>
-        <div class="team-bio">Leads technical architecture and engineering delivery across immersive, spatial, and platform-based projects. Bridges strategy and technology execution.</div>
+        <div class="team-linkedin">
+          <a href="#" target="_blank" rel="noopener" aria-label="Grant Lonie on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="team-card fade-up">
-        <div class="team-avatar">HZ</div>
+        <div class="team-avatar"><img src="images/hanah.jpg" alt="Hanah Zachariah"></div>
         <div class="team-name">Hanah Zachariah</div>
         <div class="team-title">XR Developer</div>
-        <div class="team-bio">Specializes in AR, VR, and mixed reality development. Builds the immersive experiences that bring ENTEVATE's experiential and transformation engagements to life.</div>
+        <div class="team-linkedin">
+          <a href="#" target="_blank" rel="noopener" aria-label="Hanah Zachariah on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="team-card fade-up">
-        <div class="team-avatar">JaS</div>
-        <div class="team-name">Jaclyn Scrivens</div>
-        <div class="team-title">Managing Director, Experiential Branding</div>
-        <div class="team-bio">Experienced brand strategist and event producer. Leads experiential branding engagements from concept through execution for enterprise and emerging brands.</div>
-      </div>
-
-      <div class="team-card fade-up">
-        <div class="team-avatar">ST</div>
+        <div class="team-avatar"><img src="images/sam.jpeg" alt="Sam Thibault"></div>
         <div class="team-name">Sam Thibault</div>
         <div class="team-title">Designer</div>
-        <div class="team-bio">Brings visual storytelling and UX design expertise to every engagement. Shapes the aesthetic language of ENTEVATE's brand work and digital products.</div>
+        <div class="team-linkedin">
+          <a href="#" target="_blank" rel="noopener" aria-label="Sam Thibault on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-card fade-up">
+        <div class="team-avatar">SS</div>
+        <div class="team-name">Steven Shaffer</div>
+        <div class="team-title">Manufacturing SME</div>
+        <div class="team-linkedin">
+          <a href="#" target="_blank" rel="noopener" aria-label="Steven Shaffer on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+          </a>
+        </div>
       </div>
 
     </div>

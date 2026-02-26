@@ -56,14 +56,39 @@
     h2.section-title { font-size: clamp(30px, 4vw, 48px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; }
     .section-subtitle { font-size: 15px; color: var(--gray-mid); max-width: 580px; line-height: 1.75; }
 
-    /* ── Page Hero (lighter) ── */
+    /* ── Page Hero ── */
     .page-hero {
       background: var(--light-blue);
-      background-image: radial-gradient(circle at 80% 20%, rgba(36,123,150,0.10) 0%, transparent 50%), radial-gradient(circle at 15% 85%, rgba(43,191,168,0.07) 0%, transparent 45%);
-      padding: 72px 48px 56px;
+      position: relative; overflow: hidden;
+      padding: 96px 48px 80px;
       border-bottom: 1px solid var(--border);
     }
-    .page-hero-inner { max-width: 1160px; margin: 0 auto; }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(circle at 70% 30%, rgba(36,123,150,0.10) 0%, transparent 55%),
+                  radial-gradient(circle at 25% 80%, rgba(61,151,138,0.07) 0%, transparent 50%);
+    }
+    /* ── Animated SVG curves (matches home hero) ── */
+    .hero-svg-bg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: hidden; }
+    .hero-svg-bg svg { width: 100%; height: 100%; position: absolute; inset: 0; }
+    .curve-1 { animation: drift1 8s ease-in-out infinite alternate; transform-origin: 50% 50%; }
+    .curve-2 { animation: drift2 10s ease-in-out infinite alternate; transform-origin: 50% 50%; }
+    .curve-3 { animation: drift3 12s ease-in-out infinite alternate; transform-origin: 50% 50%; }
+    .curve-4 { animation: drift1 9s ease-in-out infinite alternate-reverse; transform-origin: 50% 50%; }
+    .curve-5 { animation: drift2 11s ease-in-out infinite alternate-reverse; transform-origin: 50% 50%; }
+    @keyframes drift1 {
+      from { transform: translateY(-28px) translateX(0px)  scaleY(1);    }
+      to   { transform: translateY(28px)  translateX(8px)  scaleY(1.04); }
+    }
+    @keyframes drift2 {
+      from { transform: translateY(20px)  translateX(-6px) scaleY(0.97); }
+      to   { transform: translateY(-32px) translateX(10px) scaleY(1.04); }
+    }
+    @keyframes drift3 {
+      from { transform: translateY(-16px) translateX(4px)  scaleY(1.02); }
+      to   { transform: translateY(36px)  translateX(-8px) scaleY(0.96); }
+    }
+    .page-hero-inner { max-width: 1160px; margin: 0 auto; position: relative; z-index: 2; }
     .page-hero .section-label { display: block; }
     .page-hero h1 {
       font-size: clamp(40px, 6vw, 72px); font-weight: 100;
@@ -370,6 +395,25 @@
 
 <!-- ═══════════════════════════ PAGE HERO ═══════════════════════════ -->
 <div class="page-hero">
+  <div class="hero-svg-bg">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="curve-1"
+        d="M 180 -80 C 180 -80 60 140 60 300 C 60 460 180 540 180 720 C 180 800 130 860 130 860"
+        stroke="rgba(36,123,150,0.22)" stroke-width="5" stroke-linecap="round"/>
+      <path class="curve-2"
+        d="M 420 -100 C 420 -100 230 160 230 330 C 230 500 420 600 420 760 C 420 840 360 900 360 900"
+        stroke="rgba(36,123,150,0.30)" stroke-width="5.5" stroke-linecap="round"/>
+      <path class="curve-3"
+        d="M 790 -120 C 790 -120 490 200 490 400 C 490 600 790 730 790 920"
+        stroke="rgba(43,191,168,0.28)" stroke-width="6" stroke-linecap="round"/>
+      <path class="curve-4"
+        d="M 1080 -80 C 1080 -80 780 220 780 420 C 780 620 1080 760 1080 940"
+        stroke="rgba(36,123,150,0.20)" stroke-width="5" stroke-linecap="round"/>
+      <path class="curve-5"
+        d="M 1320 -60 C 1320 -60 1060 240 1060 440 C 1060 640 1320 780 1320 960"
+        stroke="rgba(43,191,168,0.16)" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+  </div>
   <div class="page-hero-inner">
     <div class="fade-up">
       <div class="section-label">Our Work</div>

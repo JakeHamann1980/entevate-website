@@ -161,28 +161,33 @@
     /* Mobile Drawer */
 
 
+
     /* ─── MOBILE DRAWER ─── */
     .mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.48);z-index:200;opacity:0;pointer-events:none;transition:opacity 0.28s ease;}
     .mob-overlay.open{opacity:1;pointer-events:all;}
-    .mob-drawer{position:fixed;top:0;right:0;bottom:0;width:min(320px,92vw);background:var(--white);z-index:201;transform:translateX(100%);transition:transform 0.32s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow-y:auto;box-shadow:-6px 0 32px rgba(0,0,0,0.16);}
+    .mob-drawer{position:fixed;top:0;right:0;bottom:0;width:min(300px,90vw);background:var(--white);z-index:201;transform:translateX(100%);transition:transform 0.32s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow-y:auto;box-shadow:-6px 0 32px rgba(0,0,0,0.16);}
     .mob-drawer.open{transform:translateX(0);}
-    .mob-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);flex-shrink:0;}
-    .mob-close{background:none;border:none;cursor:pointer;padding:6px;color:var(--black);line-height:1;border-radius:var(--radius);transition:background var(--tr);}
+    .mob-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);flex-shrink:0;}
+    .mob-close{background:none;border:none;cursor:pointer;padding:5px;color:var(--black);line-height:1;border-radius:var(--radius);transition:background var(--tr);}
     .mob-close:hover{background:var(--light-blue);}
     .mob-nav{flex:1;display:flex;flex-direction:column;}
-    .mob-services-btn{width:100%;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;font-size:13.5px;line-height:1.2;font-weight:500;color:var(--black);background:none;border:none;border-bottom:1px solid var(--border);cursor:pointer;font-family:var(--font);text-align:left;transition:color var(--tr);}
+    .mob-icon{width:15px;height:15px;flex-shrink:0;opacity:0.55;transition:opacity var(--tr);}
+    .mob-item-inner{display:flex;align-items:center;gap:10px;}
+    .mob-services-btn{width:100%;display:flex;justify-content:space-between;align-items:center;padding:9px 16px;font-size:13px;line-height:1.2;font-weight:500;color:var(--black);background:none;border:none;border-bottom:1px solid var(--border);cursor:pointer;font-family:var(--font);text-align:left;transition:color var(--tr);}
     .mob-services-btn:hover{color:var(--orange);}
-    .mob-chevron{transition:transform 0.22s ease;font-size:10px;opacity:0.5;}
+    .mob-services-btn:hover .mob-icon{opacity:1;}
+    .mob-chevron{transition:transform 0.22s ease;font-size:9px;opacity:0.4;}
     .mob-services-btn.open .mob-chevron{transform:rotate(180deg);}
     .mob-services-sub{display:none;background:var(--light-blue);}
     .mob-services-sub.open{display:block;}
-    .mob-services-sub a{display:block;padding:8px 18px 8px 28px;font-size:12.5px;line-height:1.2;color:var(--gray-mid);border-bottom:1px solid rgba(221,230,240,0.70);transition:color var(--tr);}
+    .mob-services-sub a{display:block;padding:7px 16px 7px 41px;font-size:12px;line-height:1.2;color:var(--gray-mid);border-bottom:1px solid rgba(221,230,240,0.70);transition:color var(--tr);}
     .mob-services-sub a:last-child{border-bottom:none;}
     .mob-services-sub a:hover{color:var(--black);}
-    .mob-link{display:block;padding:10px 20px;font-size:13.5px;line-height:1.2;font-weight:500;color:var(--black);border-bottom:1px solid var(--border);transition:color var(--tr);}
+    .mob-link{display:flex;align-items:center;gap:10px;padding:9px 16px;font-size:13px;line-height:1.2;font-weight:500;color:var(--black);border-bottom:1px solid var(--border);transition:color var(--tr);}
     .mob-link:hover{color:var(--orange);}
-    .mob-footer{padding:14px 20px;border-top:1px solid var(--border);flex-shrink:0;}
-    .mob-cta-btn{display:block;width:100%;text-align:center;padding:11px 20px;font-size:13.5px;line-height:1.2;font-weight:600;background:var(--black);color:var(--white);border-radius:var(--radius);transition:background var(--tr);}
+    .mob-link:hover .mob-icon{opacity:1;}
+    .mob-footer{padding:12px 16px;border-top:1px solid var(--border);flex-shrink:0;}
+    .mob-cta-btn{display:block;width:100%;text-align:center;padding:10px 16px;font-size:13px;line-height:1.2;font-weight:600;background:var(--black);color:var(--white);border-radius:var(--radius);transition:background var(--tr);}
     .mob-cta-btn:hover{background:#333;}
   </style>
 </head>
@@ -200,15 +205,16 @@
     <button class="mob-close" id="mobClose" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><line x1="1.5" y1="1.5" x2="16.5" y2="16.5" stroke="#181818" stroke-width="1.8" stroke-linecap="round"/><line x1="16.5" y1="1.5" x2="1.5" y2="16.5" stroke="#181818" stroke-width="1.8" stroke-linecap="round"/></svg></button>
   </div>
   <nav class="mob-nav" aria-label="Mobile navigation">
-    <button class="mob-services-btn" id="mobServicesBtn" aria-expanded="false">Services <span class="mob-chevron">▾</span></button>
+    <button class="mob-services-btn" id="mobServicesBtn" aria-expanded="false">
+      <span class="mob-item-inner"><svg class="mob-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg> Services</span><span class="mob-chevron">▾</span></button>
     <div class="mob-services-sub" id="mobServicesSub">
       <a href="/experiential.html">Experiential Branding &amp; Marketing</a>
       <a href="/transformation.html">Digital &amp; Content Transformation</a>
       <a href="/innovation.html">Innovation | Ventures | Ecosystem</a>
     </div>
-    <a href="/about.html" class="mob-link">About Us</a>
-    <a href="/our-work.html" class="mob-link">Our Work</a>
-    <a href="https://www.momentifyapp.com/" class="mob-link" target="_blank" rel="noopener">Momentify ↗</a>
+    <a href="/about.html" class="mob-link"><svg class="mob-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> About Us</a>
+    <a href="/our-work.html" class="mob-link"><svg class="mob-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg> Our Work</a>
+    <a href="https://www.momentifyapp.com/" class="mob-link" target="_blank" rel="noopener"><svg class="mob-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Momentify ↗</a>
   </nav>
   <div class="mob-footer"><a href="/contact.html" class="mob-cta-btn">Get In Touch</a></div>
 </div>

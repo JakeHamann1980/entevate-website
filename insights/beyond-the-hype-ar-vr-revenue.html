@@ -88,13 +88,6 @@
     .pull-quote { border-left: 3px solid var(--accent); background: linear-gradient(135deg, rgba(43,191,168,0.06), rgba(109,212,160,0.04)); border-radius: 0 var(--radius) var(--radius) 0; padding: 24px 28px; margin: 36px 0; }
     .pull-quote p { font-size: 18px; font-weight: 300; font-style: italic; color: var(--black); line-height: 1.65; margin: 0; letter-spacing: -0.01em; }
 
-    /* ── Article Images ── */
-    .article-fig { margin: 44px 0; }
-    .article-fig img { width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius); box-shadow: 0 6px 32px rgba(0,0,0,0.10); display: block; transition: box-shadow 0.3s ease; }
-    .article-fig img:hover { box-shadow: 0 12px 48px rgba(0,0,0,0.14); }
-    .article-fig figcaption { font-size: 12px; color: var(--gray-light); margin-top: 10px; line-height: 1.55; padding: 0 2px; font-style: italic; }
-    .article-fig.narrow img { height: 360px; }
-
     /* ── Example Cards (Retail / Training / etc.) ── */
     .example-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0 36px; }
     .example-card { background: var(--light-blue); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; position: relative; overflow: hidden; }
@@ -196,8 +189,6 @@
       .takeaways-grid { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
       footer { padding: 48px 20px 28px; }
-      .article-fig img { height: 240px; }
-      .article-fig.narrow img { height: 200px; }
     }
 
     /* ─── MOBILE DRAWER ─── */
@@ -359,15 +350,6 @@
 
     <p>The companies winning with immersive technology share one thing in common: they stopped treating it as a novelty and started treating it as infrastructure. Here's how four industries are turning spatial computing into a genuine competitive advantage.</p>
 
-    <figure class="article-fig fade-up">
-      <img
-        src="https://source.unsplash.com/featured/1200x500?augmented+reality,virtual+reality,spatial+computing"
-        alt="A person immersed in virtual reality technology"
-        loading="lazy"
-      />
-      <figcaption>Spatial computing is no longer a concept — it's a deployed business capability reshaping how companies deliver products, services, and training at scale.</figcaption>
-    </figure>
-
     <div class="pull-quote fade-up">
       <p>"The companies winning with immersive technology stopped treating it as a novelty and started treating it as infrastructure."</p>
     </div>
@@ -395,15 +377,6 @@
       </div>
     </div>
 
-    <figure class="article-fig narrow fade-up">
-      <img
-        src="https://source.unsplash.com/featured/1200x440?augmented+reality,retail,shopping,consumer"
-        alt="Augmented reality enhancing the modern retail shopping experience"
-        loading="lazy"
-      />
-      <figcaption>From virtual furniture placement to instant makeup try-ons, AR turns hesitant browsers into confident buyers — without a single in-store visit.</figcaption>
-    </figure>
-
     <h2 id="training">Transforming Training &amp; Education</h2>
     <p>The business case for VR in training is now well-established. Boeing uses VR simulations to train complex assembly procedures, compressing skill-building timelines that once took months into days. Johnson &amp; Johnson deploys immersive surgical training environments where medical professionals can practice high-stakes procedures repeatedly without patient risk — building muscle memory and clinical confidence before ever entering an operating room.</p>
     <p>The underlying economics are compelling: VR training reduces travel and facility costs, accelerates time-to-competency, and allows organizations to train distributed teams at scale without proportional increases in instructional headcount. The result is a workforce that's better prepared, faster.</p>
@@ -415,15 +388,6 @@
     <h2 id="manufacturing">Boosting Manufacturing &amp; Design</h2>
     <p>BMW has integrated AR headsets on the factory floor to guide assembly workers through complex procedures with spatial overlays — reducing error rates and standardizing quality across facilities. Architects and product designers now conduct full VR walkthroughs of spaces and objects before a single physical component is built, catching design flaws and client misalignments early when changes cost far less.</p>
     <p>In maintenance and repair, 3D product models overlaid on real-world equipment via AR allow technicians to follow step-by-step instructions anchored directly to physical machinery — dramatically reducing procedure time and diagnostic errors in the field.</p>
-
-    <figure class="article-fig narrow fade-up">
-      <img
-        src="https://source.unsplash.com/featured/1200x440?smart+manufacturing,factory,industrial+technology,ar"
-        alt="Augmented reality overlays guiding assembly workers on the factory floor"
-        loading="lazy"
-      />
-      <figcaption>AR-guided assembly overlays reduce error rates and standardize quality across facilities — compressing the learning curve for complex industrial procedures.</figcaption>
-    </figure>
 
     <h2 id="customer-service">Enhancing Customer Service &amp; Engagement</h2>
     <p>Hospitality brands are using virtual facility tours to convert hesitant prospects into confident bookings — allowing guests to walk hotel suites, event venues, and resort amenities before committing. Theme parks have integrated AR into the physical experience itself, turning rides and queues into layered immersive environments that extend dwell time and increase per-visit spending.</p>
